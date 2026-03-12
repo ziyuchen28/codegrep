@@ -1,12 +1,20 @@
 cmake_minimum_required(VERSION 3.20)
 project(codegrep LANGUAGES CXX)
 
-option(CODEGREP_BUILD_TESTS "Build codegrep tests" ON)
-option(CODEGREP_BUILD_CLI "Build codegrep CLI/debug executable" ON)
-set(CODEGREP_TEST_FIXTURE_ROOT "" CACHE PATH "Path to mini-java-playground fixture")
-set(CODEGREP_DEFAULT_RG_PATH "" CACHE FILEPATH "Default rg path compiled into the library")
+set(CODEGREP_TEST_FIXTURE_ROOT "" CACHE PATH "Path to test project fixture")
 
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
+
+
+if(PROJECT_IS_TOP_LEVEL)
+    option(CODEGREP_BUILD_TESTS "Build codegrep tests" ON)
+    option(CODEGREP_BUILD_CLI "Build codegrep CLI/debug executable" ON)
+else()
+    option(CODEGREP_BUILD_TESTS "Build codegrep tests" OFF)
+    option(CODEGREP_BUILD_CLI "Build codegrep CLI/debug executable" OFF)
+endif()
+
+
 
 add_library(codegrep
     src/process_posix.cpp
