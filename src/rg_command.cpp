@@ -124,6 +124,7 @@ std::vector<std::string> build_files_with_matches_argv(const SearcherOptions &op
 {
     std::vector<std::string> argv;
     argv.push_back(resolve_rg_program(options));
+    // -l will shortcut the search if one match found
     argv.push_back("-l");
     // edge case handling - append \0 and split on it later
     // posix allows \n in file name

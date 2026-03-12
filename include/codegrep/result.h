@@ -41,11 +41,9 @@ struct Hit
     HitKind kind{HitKind::Content};
     QueryKind query_kind{};
     std::string matched_term;
-
     std::size_t line{0};
     std::size_t column{0};
     std::size_t length{0};
-
     double score{0.0};
     std::string line_text;
 };
@@ -65,12 +63,12 @@ struct FileResult
 {
     std::filesystem::path path;
     double score{0.0};
-
     std::vector<std::string> matched_terms;
     std::vector<ScoreComponent> score_breakdown;
     std::vector<Hit> hits;
     std::vector<Snippet> snippets;
 };
+
 
 struct SearchStats 
 {
