@@ -132,7 +132,8 @@ double required_term_bonus(const QueryTerm &term)
 }
 
 
-double distinct_terms_bonus(std::size_t distinct_terms) {
+double distinct_terms_bonus(std::size_t distinct_terms) 
+{
     if (distinct_terms <= 1) {
         return 0.0;
     }
@@ -140,7 +141,8 @@ double distinct_terms_bonus(std::size_t distinct_terms) {
 }
 
 
-double multi_hit_bonus(std::size_t total_content_hits) {
+double multi_hit_bonus(std::size_t total_content_hits) 
+{
     if (total_content_hits <= 1) {
         return 0.0;
     }
