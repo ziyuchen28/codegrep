@@ -19,6 +19,7 @@ public:
 
 struct SearcherOptions 
 {
+    // optional
     std::filesystem::path rg_path{};
     bool honor_gitignore{true};
     bool include_hidden{false};

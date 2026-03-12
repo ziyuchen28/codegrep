@@ -86,9 +86,9 @@ struct SearchResult
     SearchStats stats{};
 };
 
-const char* to_string(QueryKind kind);
-const char* to_string(HitKind kind);
-const char* to_string(ScoreComponentKind kind);
+const char *to_string(QueryKind kind);
+const char *to_string(HitKind kind);
+const char *to_string(ScoreComponentKind kind);
 
 }  // namespace codegrep
 
